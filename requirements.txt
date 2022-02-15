@@ -1,0 +1,8 @@
+setuptools
+wheel
+pytest-cov
+pytest
+pycodestyle
+pytest-pylint
+Flask
+uWSGI
