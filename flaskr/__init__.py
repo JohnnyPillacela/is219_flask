@@ -14,9 +14,9 @@ def create_app(test_config=None):
         DATABASE=os.path.join(app.instance_path, "flaskr.sqlite"),
     )
     if __name__ == '__main__':
-        port = int(os.environ.get('PORT', 5000))
+        port = int(os.environ.get("PORT", 5000))
         app.run(host='0.0.0.0', port=port)
-        
+
     if test_config is None:
         # load the instance config, if it exists, when not testing
         app.config.from_pyfile("config.py", silent=True)
