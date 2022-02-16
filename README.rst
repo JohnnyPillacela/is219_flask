@@ -8,3 +8,5 @@ https://flask.palletsprojects.com/tutorial/
 
 Testing the App Tutorial:
 https://flask.palletsprojects.com/en/2.0.x/testing/
+
+Doing some Github Action Setup
