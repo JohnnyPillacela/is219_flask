@@ -4,7 +4,7 @@ ENV FLASK_APP=flaskr
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_ENV=development
 ENV PATH="/home/myuser/.local/bin:${PATH}"
-ENV FLASK_RUN_PORT=80
+#ENV FLASK_RUN_PORT=80
 RUN apt-get update &&\
     /usr/local/bin/python3 -m pip install -r requirements.txt &&\
     /usr/local/bin/python3 -m pip install --upgrade pip &&\
