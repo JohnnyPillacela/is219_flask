@@ -1,6 +1,6 @@
 name: Tests
 push:
-    branches:
+  branches:
       - master
   pull_request:
     branches:
