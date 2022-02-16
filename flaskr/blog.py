@@ -1,4 +1,4 @@
-from flask import Blueprint
+from lask import Blueprint
 from flask import flash
 from flask import g
 from flask import redirect
