@@ -1,4 +1,4 @@
-name: Publish DockerHub image
+name: Run Tests and Push Image to DockerHub
 
 on:
   push:
