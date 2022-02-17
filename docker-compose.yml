@@ -1,0 +1,14 @@
+version: "3.2"
+services:
+  flask:
+    build: .
+    restart: always
+    environment:
+      - APP_NAME=flaskApp
+      - PYTHONPATH=/home/myuser
+    ports:
+      - 80:5000
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    volumes:
+      - .:/home/myuser

@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask
-
+from flaskApp import db, auth, blog
 
 
 def create_app(test_config=None):
@@ -13,9 +13,7 @@ def create_app(test_config=None):
         # store the database in the instance folder
         DATABASE=os.path.join(app.instance_path, "flaskr.sqlite"),
     )
-    if __name__ == '__main__':
-        port = int(os.environ.get("PORT", 5000))
-        app.run(host='0.0.0.0', port=port)
+
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
@@ -35,21 +33,19 @@ def create_app(test_config=None):
         return "Hello, World!"
 
     # register the database commands
-    from flaskr import db
+
 
     db.init_app(app)
-
     # apply the blueprints to the app
-    from flaskr import auth, blog
-
     app.register_blueprint(auth.bp)
     app.register_blueprint(blog.bp)
-
     # make url_for('index') == url_for('blog.index')
     # in another app, you might define a separate main index here with
     # app.route, while giving the blog blueprint a url_prefix, but for
     # the tutorial the blog will be the main index
     app.add_url_rule("/", endpoint="index")
-
+    if __name__ == '__main__':
+        port = int(os.environ.get("PORT", 5000))
+        app.run(host='0.0.0.0', port=port)
     return app
 app = create_app()
