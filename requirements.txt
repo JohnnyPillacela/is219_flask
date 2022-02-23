@@ -1,8 +1,11 @@
 setuptools
 wheel
+Flask
 pytest-cov
 pytest
 pycodestyle
 pytest-pylint
-Flask
-uWSGI
+gunicorn
+uwsgi
+Jinja2
+Werkzeug
