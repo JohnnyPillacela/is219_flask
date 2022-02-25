@@ -13,7 +13,7 @@ from werkzeug.security import generate_password_hash
 
 from flaskApp.db import get_db
 
-bp = Blueprint("auth", __name__, url_prefix="/auth")
+bp = Blueprint("auth", __name__,template_folder='templates', url_prefix="/auth")
 
 
 def login_required(view):

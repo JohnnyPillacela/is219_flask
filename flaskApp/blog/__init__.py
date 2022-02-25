@@ -10,7 +10,7 @@ from werkzeug.exceptions import abort
 from flaskApp.auth import login_required
 from flaskApp.db import get_db
 
-bp = Blueprint("blog", __name__)
+bp = Blueprint("blog", __name__, template_folder='templates')
 
 
 @bp.route("/")
