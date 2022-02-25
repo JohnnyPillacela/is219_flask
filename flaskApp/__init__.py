@@ -2,6 +2,7 @@ import os
 from flask import Flask
 from flaskApp import db, auth, blog, simple_pages
 
+
 def create_app(test_config=None):
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__, instance_relative_config=True)
@@ -22,9 +23,11 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+
     @app.route("/hello")
     def hello():
         return "Hello, World!"
+
     # register the database commands
     db.init_app(app)
     # apply the blueprints to the app
@@ -41,4 +44,9 @@ def create_app(test_config=None):
         port = int(os.environ.get("PORT", 5000))
         app.run(host='0.0.0.0', port=port)
     return app
+
+
 app = create_app()
+
+
+

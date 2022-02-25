@@ -3,7 +3,6 @@ from jinja2 import TemplateNotFound
 from os import getenv
 import datetime
 
-
 bp = Blueprint('simple_pages', __name__,
                         template_folder='templates',static_folder='static')
 
@@ -13,7 +12,6 @@ def show(page):
         return render_template('%s.html' % page)
     except TemplateNotFound:
         abort(404)
-
 
 @bp.context_processor
 def inject_deployment_environment():
@@ -26,5 +24,10 @@ def inject_deployment_environment():
     date = currentDateTime.date()
     year = date.strftime("%Y")
     return dict(year=year)
+
+@bp.context_processor
+def inject_deployment_environment():
+    message = "hello world"
+    return dict(mymessage=message)
 
 
